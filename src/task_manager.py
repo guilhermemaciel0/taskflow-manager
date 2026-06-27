@@ -26,3 +26,11 @@ def update_task_status(task_id, status):
             return task
 
     raise ValueError("Tarefa não encontrada.")
+
+def delete_task(task_id):
+    for task in tasks:
+        if task["id"] == task_id:
+            tasks.remove(task)
+            return True
+
+    raise ValueError("Tarefa não encontrada.")
