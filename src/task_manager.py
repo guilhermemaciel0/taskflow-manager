@@ -18,3 +18,11 @@ def create_task(title, description):
 
 def list_tasks():
     return tasks
+
+def update_task_status(task_id, status):
+    for task in tasks:
+        if task["id"] == task_id:
+            task["status"] = status
+            return task
+
+    raise ValueError("Tarefa não encontrada.")
